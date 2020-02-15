@@ -16,7 +16,6 @@ namespace TaskManager.Web.Todos
             this.todoDetailsPresenter = todoDetailsPresenter;
         }
 
-        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             await todoDetailsInputPort.Handle(id, todoDetailsPresenter);
