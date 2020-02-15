@@ -33,10 +33,10 @@ namespace TaskManager.Infrastructure.Persistance
                 });
 
             //Seed Todo
-            var todo = new Todo(
-                    "Domain-Driven architecture advanced",
-                    "Now use third-party libraries to improve the architecture and development experience",
-                    userId);
+            var todo = new Todo(1,
+                "Domain-Driven architecture advanced",
+                "Now use third-party libraries to improve the architecture and development experience",
+                userId);
             modelBuilder
                 .Entity<Todo>()
                 .HasData(todo);

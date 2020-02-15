@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TaskManager.Application;
 using TaskManager.Infrastructure;
+using TaskManager.Infrastructure.Persistance;
 using TaskManager.Web.Todos.Presenters;
 
 namespace TaskManager.Web
@@ -30,6 +31,12 @@ namespace TaskManager.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            using(IServiceScope scope = app.ApplicationServices.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<TaskManagerDbContext>();
+                context.Database.EnsureCreated();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

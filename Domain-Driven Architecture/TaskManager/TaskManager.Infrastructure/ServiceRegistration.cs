@@ -4,6 +4,7 @@ using TaskManager.Application.Infrastructure;
 using TaskManager.Application.Todos;
 using TaskManager.Infrastructure.Gateways;
 using TaskManager.Infrastructure.Persistance;
+using TaskManager.Infrastructure.Services;
 
 namespace TaskManager.Infrastructure
 {
@@ -13,7 +14,7 @@ namespace TaskManager.Infrastructure
         {
             services.AddDbContext<TaskManagerDbContext>(options => options.UseInMemoryDatabase("TaskManagerDatabase"));
 
-            services.AddTransient<IUserService, IUserService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddTransient<ITodoGateway, TodoGateway>();
 
