@@ -22,6 +22,25 @@ namespace TaskManager.Infrastructure.Persistance
         {
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
 
+            //Seed ApplicationUser
+            string userId = "user_id";
+            modelBuilder
+                .Entity<ApplicationUser>()
+                .HasData(new ApplicationUser
+                {
+                    Id = userId,
+                    UserName = "Test user",
+                });
+
+            //Seed Todo
+            var todo = new Todo(
+                    "Domain-Driven architecture advanced",
+                    "Now use third-party libraries to improve the architecture and development experience",
+                    userId);
+            modelBuilder
+                .Entity<Todo>()
+                .HasData(todo);
+
             base.OnModelCreating(modelBuilder);
         }
     }

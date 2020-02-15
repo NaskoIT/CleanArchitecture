@@ -15,6 +15,8 @@ namespace TaskManager.Domain.Entities
             this.UserId = userId;
         }
 
+        public Todo(int id, string title, string content, string userId) : this(title, content, userId) => Id = id;
+
         public string Title
         {
             get => this.title;
