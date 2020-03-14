@@ -1,4 +1,5 @@
-﻿using Blog.Application.Common.Services;
+﻿using Blog.Application.Common.Models;
+using Blog.Application.Common.Services;
 using System.Threading.Tasks;
 
 namespace Blog.Application.Common.Interfaces
