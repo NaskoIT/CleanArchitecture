@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.UnitTests", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IntegrationTests", "Tests\Infrastructure.IntegrationTests\Infrastructure.IntegrationTests.csproj", "{141CA201-B146-4C8A-8036-77060176E7FA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.IntegrationTests", "Tests\Web.IntegrationTests\Web.IntegrationTests.csproj", "{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{141CA201-B146-4C8A-8036-77060176E7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141CA201-B146-4C8A-8036-77060176E7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141CA201-B146-4C8A-8036-77060176E7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{631C5342-2361-4CB3-9FC3-35A9E9F9599F} = {82E661DF-4CCD-4AD2-BC49-344E82E61D64}
 		{A308147E-56D9-45E2-97FB-7C77C69F3F9E} = {82E661DF-4CCD-4AD2-BC49-344E82E61D64}
 		{141CA201-B146-4C8A-8036-77060176E7FA} = {82E661DF-4CCD-4AD2-BC49-344E82E61D64}
+		{4433ECC8-55A8-4B9A-9C9F-4D7D69164B9A} = {82E661DF-4CCD-4AD2-BC49-344E82E61D64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF1BA8FF-79FB-4CCE-BB80-4F9051F3B8EF}

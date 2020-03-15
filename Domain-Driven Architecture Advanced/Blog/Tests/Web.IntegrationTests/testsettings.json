@@ -1,0 +1,21 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Your cconnection to the database"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "IdentityServer": {
+    "Key": {
+      "Type": "Development"
+    },
+    "Clients": {
+      "Blog.Client": {
+        "Profile": "IdentityServerSPA"
+      }
+    }
+  },
+  "AllowedHosts": "*"
+}
