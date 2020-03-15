@@ -17,13 +17,19 @@ namespace Blog.Application.UnitTests.Common.Mappings
             this.mapper = fixture.Mapper;
         }
 
-        [Theory]
-        [InlineData(typeof(Article), typeof(ArticleDetailsViewModel))]
-        public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
+        [Fact]
+        public void ShouldSupportMappingFromSourceToDestination()
         {
-            var instance = Activator.CreateInstance(source);
+            //Arrange
+            Article article = new Article("title", "content", "user_id");
+            
+            //Act
+            ArticleDetailsViewModel model = this.mapper.Map<Article, ArticleDetailsViewModel>(article);
 
-            this.mapper.Map(instance, source, destination);
+            //Assert
+            Assert.Equal(article.Content, model.Content);
+            Assert.Equal(article.Title, model.Title);
+            Assert.Equal(article.CreatedBy, model.CreatedBy);
         }
     }
 }
