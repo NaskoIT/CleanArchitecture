@@ -1,11 +1,11 @@
 ﻿using Blog.Application.Common.Interfaces;
 using Blog.Infrastructure.Identity;
-using Blog.Infrastructure.Persistance;
 using Blog.Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication;
+using Blog.Infrastructure.Persistence;
 
 namespace Blog.Infrastructure
 {

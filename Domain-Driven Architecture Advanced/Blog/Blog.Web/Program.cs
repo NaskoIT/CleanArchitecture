@@ -1,6 +1,6 @@
 using System;
 using Blog.Infrastructure.Identity;
-using Blog.Infrastructure.Persistance;
+using Blog.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

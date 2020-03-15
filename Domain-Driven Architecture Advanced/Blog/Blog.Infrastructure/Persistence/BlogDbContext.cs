@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Persistance
+namespace Blog.Infrastructure.Persistence
 {
     public class BlogDbContext : ApiAuthorizationDbContext<User>, IBlogData
     {
@@ -33,21 +33,21 @@ namespace Blog.Infrastructure.Persistance
         public DbSet<Comment> Comments { get; set; }
 
         public Task<int> SaveChanges(CancellationToken cancellationToken = new CancellationToken())
-            => this.SaveChangesAsync(cancellationToken);
+            => SaveChangesAsync(cancellationToken);
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
-            foreach (var entry in this.ChangeTracker.Entries<IAuditableEntity>())
+            foreach (var entry in ChangeTracker.Entries<IAuditableEntity>())
             {
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreatedBy ??= this.currentUserService.UserId;
-                        entry.Entity.CreatedOn = this.dateTime.Now;
+                        entry.Entity.CreatedBy ??= currentUserService.UserId;
+                        entry.Entity.CreatedOn = dateTime.Now;
                         break;
                     case EntityState.Modified:
-                        entry.Entity.ModifiedBy = this.currentUserService.UserId;
-                        entry.Entity.ModifiedOn = this.dateTime.Now;
+                        entry.Entity.ModifiedBy = currentUserService.UserId;
+                        entry.Entity.ModifiedOn = dateTime.Now;
                         break;
                 }
             }

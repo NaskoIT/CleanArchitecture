@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blog.Infrastructure.Persistance
+namespace Blog.Infrastructure.Persistence
 {
     public class BlogDbContextSeeder
     {

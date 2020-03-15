@@ -3,18 +3,14 @@ using Blog.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Blog.Infrastructure.Persistance.Configurations
+namespace Blog.Infrastructure.Persistence.Configurations
 {
-    public class ArticleConfiguration : IEntityTypeConfiguration<Article>
+    public class CommentConfiguration : IEntityTypeConfiguration<Comment>
     {
-        public void Configure(EntityTypeBuilder<Article> builder)
+        public void Configure(EntityTypeBuilder<Comment> builder)
         {
             builder
                 .HasKey(a => a.Id);
-
-            builder
-                .Property(a => a.Title)
-                .IsRequired();
 
             builder
                 .Property(a => a.Content)
@@ -25,14 +21,8 @@ namespace Blog.Infrastructure.Persistance.Configurations
                 .IsRequired();
 
             builder
-                .HasMany(a => a.Comments)
-                .WithOne()
-                .HasForeignKey("ArticleId")
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder
                 .HasOne(typeof(User))
-                .WithMany("Articles")
+                .WithMany("Comments")
                 .HasForeignKey("CreatedBy")
                 .OnDelete(DeleteBehavior.Restrict);
         }

@@ -1,7 +1,7 @@
 using Blog.Application;
 using Blog.Application.Common.Interfaces;
 using Blog.Infrastructure;
-using Blog.Infrastructure.Persistance;
+using Blog.Infrastructure.Persistence;
 using Blog.Web.Middlewares;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
